@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>HYPER | Minecraft Server</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg: #0f1115;
+      --card: #1f2937;
+      --text: #f9fafb;
+      --accent: #8b5cf6;
+      --success: #4ade80;
+      --danger: #f87171;
+      --muted: #94a3b8;
+      --border: #334155;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Навигация */
+    .top-navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: #0f1115;
+      border-bottom: 2px solid var(--accent);
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--accent);
+    }
+    .logo span { color: white; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .nav-links a:hover {
+      color: white;
+      background: rgba(139, 92, 246, 0.15);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    /* Карточки */
+    .card {
+      background: var(--card);
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      border: 1px solid var(--border);
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--accent);
+      border-bottom: 1px dashed var(--border);
+      padding-bottom: 10px;
+    }
+
+    p, li {
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .text-muted {
+      color: var(--muted);
+    }
+
+    /* Сетка карточек действий */
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+    .action-card {
+      padding: 22px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+      border: 1px solid transparent;
+    }
+    .action-card:hover {
+      transform: translateY(-4px);
+      background: rgba(139, 92, 246, 0.1);
+      border-color: var(--accent);
+    }
+    .action-card h3 {
+      margin: 0 0 10px;
+      color: var(--accent);
+    }
+    .action-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* Кнопка */
+    .btn {
+      padding: 12px 24px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #7c3aed;
+      transform: translateY(-1px);
+    }
+
+    /* IP-блок */
+    .ip-block {
+      font-family: monospace;
+      font-size: 1.4rem;
+      color: var(--success);
+      background: #2c3343;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      text-align: center;
+      word-break: break-all;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .top-navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .nav-links a {
+        margin-left: 0;
+        margin-bottom: 8px;
+        display: block;
+      }
+      .action-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="top-navbar">
+    <div class="logo">HY<span>PER</span></div>
+    <nav class="nav-links">
+      <a href="/">Главная</a>
+      <a href="/rules">Правила</a>
+      <a href="/staff">Персонал</a>
+      <a href="/coop">Сотрудничество</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Приветственный блок -->
+    <section class="card">
+      <h2>👋 Добро пожаловать на HYPER</h2>
+      <p class="text-muted">
+        Гриферское выживание 1.20.1+ на ядре Purpur. Уникальные механики, защита регионов, кланы и донатные привилегии. Присоединяйся к нашему сообществу!
+      </p>
+
+      <div class="ip-block">play.hyper-mc.ru</div>
+      
+      <div style="text-align:center; margin-top:15px;">
+        <button class="btn btn-primary" onclick="navigator.clipboard.writeText('play.hyper-mc.ru').then(() => alert('IP скопирован!'))">Копировать IP</button>
